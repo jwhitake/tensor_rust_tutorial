@@ -1,5 +1,5 @@
 [package]
-name = "vectors"
+name = "enums"
 version = "0.1.0"
 authors = ["John Whitaker <John.Whitaker@staples.com>"]
 edition = "2018"
