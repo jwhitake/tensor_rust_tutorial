@@ -1,5 +1,5 @@
-use std::collections::HashMap;
-
+//use std::collections::HashMap;
+use std::fs::File;
 
 // #[derive(Debug)]
 // enum Example {
@@ -9,51 +9,60 @@ use std::collections::HashMap;
 // }
 
 
-
 fn main() {
+    let f = File::open("test.txt");
 
-    let mut s = Some(0);
-    // loop{
-    //     match s {
-    //         Some(i) => if i > 19{
-    //             println!("Quit";
-    //             s = None;)
-    //         } else{
-    //             println!("{}", i);
-    //             s = Some(i + 2);
-    //         },
-    //         _ => {
-    //             break;
-    //         }
-    //     }
-    //}
-
-    while let Some(i) = s {
-        if i > 19 {
-            println!("Quit");
-            s = None;
-        }else{
-             println!("{}", i);
-             s = Some(i + 2);
+    let f = match f {
+        Ok(file) => file,
+        Err(error) => {
+            panic!("There was a problem opening the file {:?}", error)
         }
-    }
+    };
+
+    
+
+    // let mut s = Some(0);
+    // // loop{
+    // //     match s {
+    // //         Some(i) => if i > 19{
+    // //             println!("Quit";
+    // //             s = None;)
+    // //         } else{
+    // //             println!("{}", i);
+    // //             s = Some(i + 2);
+    // //         },
+    // //         _ => {
+    // //             break;
+    // //         }
+    // //     }
+    // //}
+
+    // while let Some(i) = s {
+    //     if i > 19 {
+    //         println!("Quit");
+    //         s = None;
+    //     }else{
+    //          println!("{}", i);
+    //          s = Some(i + 2);
+    //     }
+    // }
 
 
-    let mut hm = HashMap::new();
+    // let mut hm = HashMap::new();
 
-    hm.insert(String::from("random"), 12);
-    hm.insert(String::from("strings"), 49);
+    // hm.insert(String::from("random"), 12);
+    // hm.insert(String::from("strings"), 49);
 
-    for (k, v) in &hm{
-        println!("{}: {}", k, v);
-    }
+    // for (k, v) in &hm{
+    //     println!("{}: {}", k, v);
+    // }
 
 
-    match hm.get(&String::from("doofus")){
-        Some(&n) => println!("{}", n),
-        None => println!("No match")
-        //_ => println!("no match")
-    }
+    // match hm.get(&String::from("doofus")){
+    //     Some(&n) => println!("{}", n),
+    //     None => println!("No match")
+    //     //_ => println!("no match")
+    // }
 
 
     // let r = vec![
